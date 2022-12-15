@@ -1,0 +1,13 @@
+1) need java 15 and mysql 5.7
+2) After insatlling java 15 create .keystroke file in your home directory (Just open cmd and write this command) 
+    command =keytool -genkey -alias tomcat -keyalg RSA
+and aslo create a .mifos folder command =md .mifosx
+it will ask for question complete it and copy the key store file
+3) Unzip the tomcat and change the server xml file(tomcats/conf/server.xml)
+give your db connection and key store path
+4)now copy paste pentahoreport from the folder to cretaed .mifosx folder
+5)Change the jdbc properties= pache-tomcat-9.0.38\webapps\fineract-provider\WEB-INF\classes\META-INF\spring\jsbcproperties 
+to your connection 
+6)Run the project tomact/bin/startup it will get failed and get connection time out 
+7)Open your mysql client and open fineract tenants database change the value of the colum host Schema server ,schemausername,SchemaPassword
+8)Now it will run 
